@@ -1,7 +1,7 @@
 cet_make( 
   LIBRARIES
-    cetlib_except
-    ${ROOT_BASIC_LIB_LIST}
+    cetlib_except::cetlib_except
+    ROOT::Core
   NO_DICTIONARY
   )
 

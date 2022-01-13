@@ -1,10 +1,10 @@
-cet_make( 
+cet_make(  ### MIGRATE-ACTION-RECOMMENDED: use cet_make_library(), build_dictionary(), basic_plugin() with explicit source lists
   LIBRARIES
-    cetlib_except
+    cetlib_except::cetlib_except
   NO_DICTIONARY
   )
 
-art_dictionary(DICTIONARY_LIBRARIES sbnobj_SBND_Commissioning)
+art_dictionary(DICTIONARY_LIBRARIES sbnobj_SBND_Commissioning lardataobj::RecoBase)
 
 install_headers()
 install_source()
