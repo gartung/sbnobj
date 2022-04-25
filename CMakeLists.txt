@@ -16,7 +16,7 @@ cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
 
 find_package(cetmodules 2.29.02 REQUIRED)
-project(sbnobj VERSION 09.12.05 LANGUAGES CXX)
+project(sbnobj VERSION 09.12.09 LANGUAGES CXX)
 
 message(STATUS
   "\n-- ============================================================================="
