@@ -4,7 +4,7 @@ cet_make(
   NO_DICTIONARY
   )
 
-art_dictionary(DICTIONARY_LIBRARIES sbnobj::Common_Analysis)
+art_dictionary(DICTIONARY_LIBRARIES sbnobj_SBND_ToF)
 
 install_headers()
 install_source()

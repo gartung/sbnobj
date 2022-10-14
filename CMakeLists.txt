@@ -13,19 +13,14 @@
 # ======================================================================
 cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
-
-
 find_package(cetmodules 2.29.02 REQUIRED)
-project(sbnobj VERSION 09.12.12 LANGUAGES CXX)
+project(sbnobj VERSION 09.14.09 LANGUAGES CXX)
 
 message(STATUS
   "\n-- ============================================================================="
   "\n-- === *** Start of configuration of ${PROJECT_NAME} ***"
   "\n-- ===")
 
-# cetbuildtools contains our cmake modules ### MIGRATE-ACTION-REQUIRED: remove
-
-list(APPEND CMAKE_MODULE_PATH $ENV{CANVAS_ROOT_IO_DIR}/Modules) ### MIGRATE-ACTION-REQUIRED: remove
 
 include(CetCMakeEnv)
 cet_cmake_env()
@@ -40,23 +35,23 @@ cet_set_compiler_flags(DIAGS CAUTIOUS
 cet_report_compiler_flags(REPORT_THRESHOLD VERBOSE)
 
 # these are minimum required versions, not the actual product versions
-find_package( messagefacility )
-find_package( canvas ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
-find_package( larcoreobj ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
-find_package( lardataobj ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
-find_package( larcorealg ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
-find_package( lardataalg ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
-find_package( nusimdata ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( messagefacility REQUIRED )
+find_package( canvas REQUIRED)
+find_package( larcoreobj REQUIRED)
+find_package( lardataobj REQUIRED)
+find_package( larcorealg REQUIRED)
+find_package( lardataalg REQUIRED)
+find_package( nusimdata REQUIRED)
 find_package( Boost COMPONENTS system)
-find_package( ROOT )
-find_package( CLHEP COMPONENTS All)
+find_package( ROOT REQUIRED)
+find_package( CLHEP REQUIRED)
 
 # macros for dictionary and simple_plugin
 include(ArtDictionary)
 include(CetMake)
 include(BasicPlugin)
 
-# add cet_find_library commands here when needed ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+# add cet_find_library commands here when needed
 
 # ADD SOURCE CODE SUBDIRECTORIES HERE
 add_subdirectory(sbnobj)

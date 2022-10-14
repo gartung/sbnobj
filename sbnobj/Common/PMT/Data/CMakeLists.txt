@@ -1,4 +1,4 @@
-cet_make( ### MIGRATE-ACTION-RECOMMENDED: use cet_make_library(), build_dictionary(), basic_plugin() with explicit source lists
+cet_make(
   LIBRARIES
   lardataobj::RawData
   NO_DICTIONARY
